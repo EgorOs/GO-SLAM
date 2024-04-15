@@ -3,7 +3,7 @@
 MODE=$1
 EXPNAME=$2
 
-OUT_DIR=/home/yzhang/exps/goslam/Replica/
+OUT_DIR=/home/developer/go_slam_replica
 
 scenes="office0 office1 office2 office3 office4 room0 room1 room2"
 
@@ -14,9 +14,13 @@ do
   echo Running on $sc ...
   if [[ $MODE == "mono" ]]
   then
-    python run.py configs/Replica/${sc}_mono.yaml --device cuda:0 --mode $MODE --output ${OUT_DIR}/${sc}/$EXPNAME
+    python run.py configs/Replica/${sc}_mono.yaml \
+      --input_folder /home/developer/Datasets/Replica/${sc} \
+      --device cuda:0 --mode $MODE --output ${OUT_DIR}/${sc}/$EXPNAME
   else
-    python run.py configs/Replica/${sc}.yaml --device cuda:0 --mode $MODE --output ${OUT_DIR}/${sc}/$EXPNAME
+    python run.py configs/Replica/${sc}.yaml \
+      --input_folder /home/developer/Datasets/Replica/${sc} \
+      --device cuda:0 --mode $MODE --output ${OUT_DIR}/${sc}/$EXPNAME
   fi
   echo $sc done!
 done

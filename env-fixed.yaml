@@ -1,0 +1,26 @@
+name: droidenv
+channels:
+  - rusty1s
+  - pytorch
+  - open3d-admin
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - pytorch-scatter
+  - torchaudio
+  - torchvision
+  - open3d
+  - pytorch>=2.0.0
+  - cudatoolkit>=11.3
+  - tensorboard
+  - scipy
+  - opencv
+  - tqdm
+  - suitesparse
+  - matplotlib
+  - pyyaml
+  - trimesh
+  - colorama
+  - pyrender==0.1.45
+  - PyMCubes==0.1.4
